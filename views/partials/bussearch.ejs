@@ -1,0 +1,44 @@
+<div class="searchrowpanell">
+    <div class="searchrow bsrow">
+        <div class="searchtxt rowmember busrm">
+            <i class="fa-solid fa-location-dot"></i>
+            <div style="width:5px"></div>
+            <label for="binpfrm" class="businp">
+                <input type="text" id="binpfrm" class="bustinp" placeholder="From?">
+
+                <span class="focus-bg"></span>
+            </label>
+            
+        </div>
+        <div class="searchtxt rowmember busrm">
+            <i class="fa-solid fa-location-dot"></i>
+            <div style="width:5px"></div>
+            <label for="binpto" class="businp">
+                <input type="text" id="binpto" class="bustinp" placeholder="To?">
+            
+                <span class="focus-bg"></span>
+            </label>
+        
+        </div>
+        <div class="searchbutton rowmember" id="sbtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <div style="width:5px"></div>
+            <div class="btitle">Search</div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    document.getElementById("sbtn").addEventListener("click", () => {
+        var from = document.getElementById("binpfrm").value;
+        var to = document.getElementById("binpto").value;
+        var add = window.location.href.split("?");
+        window.location = add[0] + "?from=" + from + "&to=" + to;
+
+    })
+</script>
+
+
+
+

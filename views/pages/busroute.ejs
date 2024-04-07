@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('../partials/heading.ejs', {title: "Bus Routes" }) %>
+
+</head>
+
+<body class="body">
+    <%- include('../partials/navbar.ejs'); %>
+        <div class="widthdiv"></div>
+
+        <div class="widthdiv"></div>
+        <div class="widthdiv" style="height:10px ;"></div>
+        <div class="heading">Rides Open Your Eyes</div>
+
+        <%- include('../partials/bussearch.ejs'); %>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="attractions">
+                <div class="attractioncontainer">
+                    <% if( busObject.length>0 ){
+                        if(viewall == 1){
+
+                        busObject.forEach((e)=> {
+                            if(to ==""){
+
+                            
+                        e.destination.forEach((p)=>{ 
+                          
+                            %>
+                        <div class="bus_card" style="background-image:url(
+                                                                                
+                                                                                ) ">
+                            <div class="routename">
+                                TO 
+                                    <%= p %>
+                            </div>
+                            <div class="routedisc">
+                                <% var t=[]
+                                    timear=['00AM','01AM','02AM','03AM','04AM','05AM','06AM','07AM','08AM','09AM','10AM','11AM','12PM','01PM','02PM','03PM','04PM','05PM','06PM','07PM','08PM','09PM','10PM','11PM'];
+                                    randomIndex=Math.floor(Math.random() * 4); 
+                                    for(var b=0;randomIndex>b; b++){
+                                    randomIndex2=Math.floor(Math.random() * 23); if (!t.includes(timear[randomIndex2]))
+                                    { 
+                                        %>
+
+                                    <%=timear[randomIndex2] %>&nbsp;.
+
+
+
+                                        <% }
+                                    } %>
+
+                            </div>
+                        </div>
+                        <%
+                   
+                    
+                    
+                    }); 
+
+                }
+                
+                else{
+
+%>
+<%
+    e.destination.forEach((p)=>{
+    if(p.toLowerCase()==to.toLowerCase()){
+
+    %>
+
+
+<div class="one_card">
+<div class="bus_card_one">
+    <div class="routename_one">
+        FROM :&nbsp <%= e.place %> <div style="width:20px"> </div>
+        TO :&nbsp
+        <%= p %>
+    </div>
+    <div class="routedisc_one">
+        <br>
+        <% var t=[]
+            timear=['00AM','01AM','02AM','03AM','04AM','05AM','06AM','07AM','08AM','09AM','10AM','11AM','12PM','01PM','02PM','03PM','04PM','05PM','06PM','07PM','08PM','09PM','10PM','11PM'];
+            randomIndex=Math.floor(Math.random() * 4) + 1; for(var b=0;randomIndex>b; b++){
+            randomIndex2=Math.floor(Math.random() * 23); if (!t.includes(timear[randomIndex2]))
+            { %>
+<div class="time">
+<%=timear[randomIndex2] %>&nbsp;.
+</div>
+         
+
+
+
+                <% } }%>
+
+    </div>
+</div>
+
+</div>
+
+    <%}
+ });
+
+
+
+                }
+                    }); 
+                }
+            }
+                    
+                    
+                    
+                    %>
+                </div>
+            </div>
+
+
+</body>
+
+
+</html>

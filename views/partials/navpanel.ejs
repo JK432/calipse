@@ -1,0 +1,59 @@
+<div class="rowpanell">
+    <div class="row">
+        <div class="rowmember" id="accbtn" >
+    <i class="fa-solid fa-bed" style="color: #000000;"></i><div style="width:5px"></div>
+            <div class="btitle">Accommodation</div> 
+        </div>
+        <div class="rowmember" id="carbtn" >
+            <i class="fa-solid fa-car" style="color: #000000;"></i><div style="width:5px"></div>
+            <div class="btitle">Car rental</div>
+        </div>
+<div class="rowmember" id="attbtn" >
+    <i class="fa-solid fa-image"></i><div style="width:5px"></div>
+            <div class="btitle">Attraction</div>
+        </div>
+
+
+        <div class="rowmember" id="resbtn" >
+            <i class="fa-solid fa-utensils" style="color: #000000;"></i><div style="width:5px"></div>
+            <div class="btitle">Restaurants</div>
+        </div>
+        <div class="rowmember" id="busbtn" >
+            <i class="fa-solid fa-bus-simple" style="color: #000000;"></i><div style="width:5px"></div>
+            <div class="btitle">Bus Timing</div>
+        </div>
+
+    </div>
+</div>
+
+
+<script>
+document.getElementById("accbtn").addEventListener("click",()=>{
+    
+    var add = window.location.href.split("?");
+    window.location = add[0]  + "accommodation";
+})
+
+
+    document.getElementById("carbtn").addEventListener("click", () => {
+
+        var add = window.location.href.split("?");
+        window.location = add[0]  + "carrental";
+    })
+    document.getElementById("attbtn").addEventListener("click", () => {
+
+        var add = window.location.href.split("?");
+        window.location = add[0]  + "attraction";
+    })
+    document.getElementById("resbtn").addEventListener("click", () => {
+
+        var add = window.location.href.split("?");
+        window.location = add[0] + "resturents";
+    })
+     document.getElementById("busbtn").addEventListener("click", () => {
+
+            var add = window.location.href.split("?");
+            window.location = add[0]  + "busservices";
+        })
+
+</script>

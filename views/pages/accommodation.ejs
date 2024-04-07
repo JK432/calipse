@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('../partials/heading.ejs', {title: "Accommodation" }) %>
+
+</head>
+
+<body class="body">
+
+    <%- include('../partials/navbar.ejs'); %>
+    
+        <div class="widthdiv"></div>
+
+        <div class="widthdiv"></div>
+        <div class="widthdiv" style="height:10px ;"></div>
+        <div class="heading">Travel is the only thing you buy that makes you richer</div>
+
+        <%- include('../partials/search.ejs'); %>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="heading">Great Hospitality is a Blessing</div>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="attractions">
+                <div class="attractioncontainer">
+                    <% if( accoObject.length>0 ){
+                        if(viewall == 1){
+
+                        accoObject.forEach((e)=> {
+                        e.hotels.forEach((r)=>{%>
+                        <div class="attraction_card" style="background-image:url(
+                                                        <%= r.image %>
+                                                        ) ">
+                            <div class="attractionname">
+                                <%= r.name %>
+                            </div>
+                            <div class="attractionprice">
+                                <%= r.price %>
+                            </div>
+                            <div class="attractiondisc">
+                                <%= r.address %>
+                            </div>
+                        </div>
+                        <% }) }) } else if(viewall==0){ accoObject.forEach((e)=> {
+                            n1 = Math.floor(Math.random() * (2 - 0) + 0);
+                            n2 = Math.floor(Math.random() * (4 - 3) + 4);
+                            %>
+                            <div class="attraction_card" style="background-image:url(
+                                                                <%= e.hotels[n1].image %>
+                                                                ) ">
+                                <div class="attractionname">
+                                    <%= e.hotels[n1].name %>
+                                </div>
+                                <div class="attractionprice">
+                                    <%= e.hotels[n1].price %>
+                                </div>
+                                <div class="attractiondisc">
+                                    <%= e.hotels[n1].address %>
+                                </div>
+                            </div>
+                            <div class="attraction_card" style="background-image:url(
+                                         <%= e.hotels[n2].image %>
+                                          ) ">
+                                <div class="attractionname">
+                                    <%= e.hotels[n2].name %>
+                                </div>
+                                <div class="attractionprice">
+                                    <%= e.hotels[n2].price %>
+                                </div>
+                                <div class="attractiondisc">
+                                    <%= e.hotels[n2].address %>
+                                </div>
+                            </div>
+
+                            <% }) } } %>
+                </div>
+            </div>
+
+
+</body>
+
+
+</html>

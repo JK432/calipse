@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/heading.ejs',{title: "Popular Destinations" }) %>
+
+</head>
+<body class="body">
+    <%- include('../partials/navbar.ejs'); %>
+    <div class="widthdiv"></div>
+    <%- include('../partials/navpanel.ejs'); %>
+    <div class="widthdiv"></div>
+        <div class="widthdiv" style="height:10px ;"></div>
+    <div class="heading">Make Your Own Vacation</div>
+
+    <%- include('../partials/search.ejs'); %>
+    <div class="widthdiv" style="height:20px ;"></div>
+    <div class="heading">Popular Destinations</div>
+        <div class="widthdiv" style="height:20px ;"></div>
+        <div class="destinations">
+            <div class="destinationcontainer">
+              <% if( attractObject.length>0 ){ %>
+                <%    attractObject.forEach(e => { %>
+                    <div class="destination_card" style= "background-image:url(
+                        <%= e.image %>
+                        
+                        ) ">
+                     <div class="destinationname"><%= e.destination%></div>
+                    
+                    </div>
+                <%   });} %>
+               
+                
+                
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('../partials/heading.ejs', {title: "Resturents" }) %>
+
+</head>
+
+<body class="body">
+    <%- include('../partials/navbar.ejs'); %>
+        <div class="widthdiv"></div>
+
+        <div class="widthdiv"></div>
+        <div class="widthdiv" style="height:10px ;"></div>
+        <div class="heading">Good Food Ends With Good Talk</div>
+
+        <%- include('../partials/search.ejs'); %>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="heading">Great Resturents Bring Heaven To Earth</div>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="attractions">
+                <div class="attractioncontainer">
+                    <% if( restObject.length>0 ){
+                        if(viewall == 1){
+
+                        restObject.forEach((e)=> {
+                        e.resturent.forEach((r)=>{%>
+                        <div class="attraction_card" style="background-image:url(
+                                                        <%= r.image %>
+                                                        ) ">
+                            <div class="attractionname">
+                                <%= r.name %>
+                            </div>
+                            <div class="attractiondisc">
+                                <%= r.class %>
+                            </div>
+                        </div>
+                        <% }) }) } else if(viewall==0){ restObject.forEach((e)=> {
+                            n1 = Math.floor(Math.random() * (5 - 0) + 0);
+                            n2 = Math.floor(Math.random() * (10 - 6) + 6);
+                            %>
+                            <div class="attraction_card" style="background-image:url(
+                                                                <%= e.resturent[n1].image %>
+                                                                ) ">
+                                <div class="attractionname">
+                                    <%= e.resturent[n1].name %>
+                                </div>
+                                <div class="attractiondisc">
+                                    <%= e.resturent[n1].class %>
+                                </div>
+                            </div>
+                            <div class="attraction_card" style="background-image:url(
+                                         <%= e.resturent[n2].image %>
+                                          ) ">
+                                <div class="attractionname">
+                                    <%= e.resturent[n2].name %>
+                                </div>
+                                <div class="attractiondisc">
+                                    <%= e.resturent[n2].class %>
+                                </div>
+                            </div>
+
+                            <% }) } } %>
+                </div>
+            </div>
+
+
+</body>
+
+
+</html>

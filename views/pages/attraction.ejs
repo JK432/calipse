@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('../partials/heading.ejs', {title: "Attractions" }) %>
+
+</head>
+
+<body class="body">
+    <%- include('../partials/navbar.ejs'); %>
+        <div class="widthdiv"></div>
+
+            <div class="widthdiv"></div>
+            <div class="widthdiv" style="height:10px ;"></div>
+            <div class="heading">Book A Great Experience</div>
+
+            <%- include('../partials/search.ejs'); %>
+                <div class="widthdiv" style="height:20px ;"></div>
+                <div class="heading">Popular Destinations</div>
+                <div class="widthdiv" style="height:20px ;"></div>
+                <div class="attractions">
+                    <div class="attractioncontainer">
+                    <% if( attractObject.length>0 ){
+                        if(viewall == 1){
+                    
+                        attractObject.forEach((e)=> {
+                        e.places.forEach((p)=>{%>
+                        <div class="attraction_card" style="background-image:url(
+                                                        <%= p.image %>
+                                                        ) ">
+                            <div class="attractionname">
+                                <%= p.title %>
+                            </div>
+                            <div class="attractiondisc">
+                                <%= p.disc %>
+                            </div>
+                        </div>
+                        <% }) }) } else if(viewall==0){ attractObject.forEach((e)=> {
+                            n1 = Math.floor(Math.random() * (5 - 0) + 0);
+                            n2 = Math.floor(Math.random() * (10 - 6) + 6);
+                            %>
+                            <div class="attraction_card" style="background-image:url(
+                                                                <%= e.places[n1].image %>
+                                                                ) ">
+                                <div class="attractionname">
+                                    <%= e.places[n1].title.split(".")[1]%>
+                                </div>
+                                <div class="attractiondisc">
+                                <%= e.places[n2].disc %>
+                                    </div>
+                            </div>
+                            <div class="attraction_card" style="background-image:url(
+                                         <%= e.places[n2].image %>
+                                          ) ">
+                                <div class="attractionname">
+                                    <%= e.places[n2].title.split(".")[1] %>
+                                </div>
+                                <div class="attractiondisc">
+                                    <%= e.places[n2].disc %>
+                                </div>
+                            </div>
+                           
+                            <% }) } } %>
+                    </div>
+                </div>
+
+
+</body>
+
+
+</html>
+
+

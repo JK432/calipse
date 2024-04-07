@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <%- include('../partials/heading.ejs', {title: "Car retal" }) %>
+
+</head>
+
+<body class="body">
+    <%- include('../partials/navbar.ejs'); %>
+        <div class="widthdiv"></div>
+
+        <div class="widthdiv"></div>
+        <div class="widthdiv" style="height:10px ;"></div>
+        <div class="heading">Popular Car Hire Brands</div>
+
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="widthdiv" style="height:20px ;"></div>
+            <div class="attractions">
+                <div class="attractioncontainer">
+                    <% if( carObject.length>0 ){
+                        
+
+                        carObject.forEach((e)=> {
+                     %>
+                        <div class="car_card" style="background-image:url(
+                                                        <%= e.image %>
+                                                        );
+                                                        background-size:cover;
+                                                        ">
+                            <div class="carname">
+                                <%= e.name %>
+                            </div>
+                           
+                        </div>
+                        <% })  } %>
+                </div>
+            </div>
+
+
+</body>
+
+
+</html>

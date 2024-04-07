@@ -1,0 +1,491 @@
+
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    cursor: default;
+}
+*{
+    margin: 0px;  
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar{
+    background-color: transparent;
+    display: flex;
+    justify-items: center;
+    align-self: stretch;
+    padding: 10px;
+}
+.heroimg{
+    height:50px;
+}
+h2{
+    color: aqua;
+}
+.body{
+    width: 100vw;
+    background-color: rgb(65, 67, 66);
+    background:url("../images/bg.jpg");
+}
+.row{
+display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: hidden;
+    width: 100vw;
+    justify-content: space-between;
+}
+.rowmember{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(214, 189, 157);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+     
+}
+.rowpanell{
+    /* display: flex; */
+    margin-top: 20px;
+    width:100vw;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+.heading{
+    padding-left:10px ;
+    font-size: 1.5em;
+    font-weight: 900;
+    color: antiquewhite;
+}
+.widthdiv{
+    height: 10px;
+}
+.searchtxt{
+margin-right: 5px;
+}
+.searchrowpanell{
+    margin-top: 20px;
+        width: 100vw;
+        margin-left: auto;
+        margin-right: auto;
+}
+.searchrow {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow-y: hidden;
+    width: 100vw;
+    justify-content: start;
+
+}
+.searchbutton{
+    background-color: rgb(183, 149, 106);
+    margin-left: 0px;
+    cursor: default;
+    
+}
+#inp{
+    border-bottom: solid;
+    border-bottom: 2px white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: calc(100vw - 230px);
+    outline: none;
+    padding:5px;
+background-color: transparent;
+margin-left: 2px;
+
+}
+#inp::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    /* Firefox */
+}
+
+#inp:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(0, 0, 0);
+}
+
+#inp::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(0, 0, 0);
+}
+#inp:focus{
+    border-left:none ;
+    border-right:none ;
+    border-top: none;
+    border-bottom: solid black 2px;
+outline: none;
+}
+.destinations{
+    width: calc(100vw );
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+.destinationcontainer{
+
+margin: 20px;
+        display: inline-flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            justify-items: left;
+}
+.destination_card{
+    margin-right: 15px;
+    margin-bottom: 15px;
+    background-size: cover;
+    height: 200px;
+    min-width: 400px;
+    border-radius: 10px;
+    display: flex;
+
+}
+.destinationname{
+    margin-top: auto;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: antiquewhite;
+    width: 100%;
+    padding:10px;
+    background-color: rgba(0, 0, 0, 0.319);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+}
+.destination_card:hover .destinationname{
+    font-size:2em;
+}
+.attraction{}
+.attractioncontainer{
+margin-left: auto;
+margin-right: auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-evenly;
+    justify-items: center;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+.attraction_card{
+    border-radius: 15px;
+    width: 450px;
+    height: 250px;
+    background-size: cover;
+        margin-right: 15px;
+            margin-bottom: 15px;
+            display: inline-block;
+            transition: .5s ease;
+            overflow: hidden;
+            align-items: end;
+            position: relative;
+}
+.attractionname{
+    position: absolute;
+        bottom: 0;
+        margin-top: auto;
+            font-size: 1.6em;
+            font-weight: 600;
+            color: antiquewhite;
+            width: 100%;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.319);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+}
+.attractiondisc{
+        position: absolute;
+            bottom: 0;
+            margin-top: auto;
+                font-size: 1em;
+                transition: .5s ease;
+                color: antiquewhite;
+                width: 100%;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.49);
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                max-width: 100%;
+                max-height:100% ;
+                overflow-y: scroll;
+}
+.attractionprice{
+    padding: 5px;
+            position: absolute;
+            right:0 ;
+            top: 0;
+            font-size: 1.6em;
+                font-weight: 600;
+                color: antiquewhite;
+}
+.attraction_card .attractiondisc{
+    display: none;
+    transition: .5s ease;
+    
+}
+
+.attraction_card:hover .attractiondisc {
+    display: block;
+    
+}
+.attraction_card:hover .attractionname{
+    display: none;
+}
+
+
+.bustinp {
+    border-bottom: solid;
+    border-bottom: 2px white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: calc(20vw);
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    /* margin-left: 2px; */
+
+}
+
+.bustinp::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(0, 0, 0);
+    opacity: 1;
+    /* Firefox */
+}
+
+.bustinp:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(0, 0, 0);
+}
+
+.bustinp::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(0, 0, 0);
+}
+
+.bustinp:focus {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: solid black 2px;
+    outline: none;
+}
+.busrm{
+margin-left: 2px;
+}
+.bsrow{
+padding-left: 20px;
+}
+
+
+
+
+
+
+.bus_card {
+    border-radius: 15px;
+    width: 210px;
+    height: 70px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: .5s ease;
+    overflow: hidden;
+    align-items: center;
+    position: relative;
+    background-color: gray;
+    justify-items: center;
+}
+
+
+.routename {
+    position: absolute;
+    bottom: 0;
+
+    font-size: 1.2em;
+    font-weight: 600;
+    color: antiquewhite;
+    width: 100%;
+   height: 60%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.319);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.routedisc{
+    padding: 2px;
+    background-color: grey;
+    color:floralwhite;
+    padding-left: 9px;
+}
+
+.one_card{
+    margin-left: 10px;
+        margin-right: 0;
+        width: 100%;
+}
+.bus_card_one {
+    margin-left: 0;
+    margin-right: 0;
+        border-radius: 15px;
+        padding-bottom: 10px;
+          width: max-content;
+            height: max-content;
+            margin-right: 15px;
+            margin-bottom: 15px;
+            display: block;
+            transition: .5s ease;
+            overflow: hidden;
+            align-items: center;
+            position: relative;
+    background-color: rgba(0, 0, 0, 0.319);
+            justify-items: left;
+}
+.routename_one {
+    
+    bottom: 0;
+    display: flex;
+    font-size: 1.5em;
+    font-weight: 600;
+    color: antiquewhite;
+ 
+    height: max-content;
+    padding: 10px;
+    
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.routedisc_one{
+    display: flex;
+   padding-left: 10px;
+
+}
+.time{
+background-color: antiquewhite;
+margin-left: 5px;
+font-size: 1.2em;
+padding: 5px;
+border-radius: 7px;
+}
+
+
+
+.car_card {
+    border-radius: 15px;
+    width: 350px;
+    height: 150px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: .5s ease;
+    overflow: hidden;
+    align-items: end;
+    position: relative;
+}
+
+.carname {
+    position: absolute;
+    bottom: 0;
+    margin-top: auto;
+    font-size: 1.6em;
+    font-weight: 600;
+    color: antiquewhite;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.319);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+
+.row {
+    justify-content: start;
+}
+
+.rowmember {
+  margin-right: 5px;
+}
+
+.body{
+    width: 100vw;
+}
+}
+
+
+@media only screen and (max-width: 450px){
+    .destination_card {
+            margin-right: 0;
+            height: 175px;
+            min-width:90%;
+            
+        }
+
+.attraction_card {
+width: 85%;
+margin-left: auto;
+margin-right: auto;
+                }
+#inp{
+    padding: 2px;
+    margin-left: 0px;
+    width: calc(100vw - 230px);
+}
+.bustinp {
+    padding: 2px;
+    margin-left: 0px;
+    width:90%;
+    height: 15px;
+    padding-right:0px;
+}
+.bsrow{padding-left: 3px;}
+.rowmember{
+    padding: 5px;
+}
+.fa-solid{
+padding: 2px;
+}
+.searchbutton{
+    margin-left: 2px;
+}
+}
+.bus_card_one{
+    width: 90%;
+}
+.routedisc_one{
+    display: inline-flex;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        overflow-y: hidden;
+        width: 100%;
+        padding-right: 10px;
+}
+@media only screen and (max-width: 265px) {
+.bustinp {width: 50px;}
+
+}

@@ -1,0 +1,28 @@
+<div class="searchrowpanell">
+    <div class="searchrow">
+        <div class="searchtxt rowmember">
+        <i class="fa-solid fa-location-dot"></i>
+            <div style="width:5px"></div>
+        <label for="inp" class="inp">
+            <input type="text" id="inp" placeholder="Where are you going ?">
+           
+            <span class="focus-bg"></span>
+        </label>
+        </div>
+        <div class="searchbutton rowmember" id="sbtn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+            <div style="width:5px"></div>
+            <div class="btitle">Search</div>
+        </div>
+
+
+    </div>
+</div>
+<script>
+    document.getElementById("sbtn").addEventListener("click",()=>{
+        var txt= document.getElementById("inp").value;
+        var add = window.location.href.split("?");
+        window.location= add[0]+"?place="+txt;
+
+    })
+</script>
