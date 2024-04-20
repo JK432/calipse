@@ -33,38 +33,38 @@ app.get('/', (req, res)=>{
    
 });
 
-app.get('/attraction', (req, res) => {
+// app.get('/attraction', (req, res) => {
 
-    var query  = req.query.place
+//     var query  = req.query.place
 
-    var flag = 0;
-    var i = [];
+//     var flag = 0;
+//     var i = [];
 
-    attractions.find().then((result) => {
+//     attractions.find().then((result) => {
         
-        result.forEach((e) => {
+//         result.forEach((e) => {
 
-            if(typeof query === typeof void(0)) 
-            flag = 0;
-            else if (e.destination.toLowerCase() == query.toLowerCase()){
-                flag = 1;
+//             if(typeof query === typeof void(0)) 
+//             flag = 0;
+//             else if (e.destination.toLowerCase() == query.toLowerCase()){
+//                 flag = 1;
             
-            i.push(e)              
-        }
+//             i.push(e)              
+//         }
             
-    })
-        if(flag == 1){
-            res.render('./pages/attraction.ejs', { attractObject: i, viewall: 1 })
-        } else if (flag == 0){
-            res.render('./pages/attraction.ejs', { attractObject: result, viewall: 0 });
-        }
-    }
+//     })
+//         if(flag == 1){
+//             res.render('./pages/attraction.ejs', { attractObject: i, viewall: 1 })
+//         } else if (flag == 0){
+//             res.render('./pages/attraction.ejs', { attractObject: result, viewall: 0 });
+//         }
+//     }
 
-    ).catch((err) => { 
-        console.log(err)
-        res.render('./pages/error.ejs') })
+//     ).catch((err) => { 
+//         console.log(err)
+//         res.render('./pages/error.ejs') })
 
-});
+// });
 
 
 app.get('/resturents', (req, res) => {
